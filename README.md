@@ -1,14 +1,13 @@
-Library Management System
+# Library Management System
 
-Objective:
-
+## Objective
 This Library Management System is designed to manage and track information about books, employees, branches, customers, and the status of book issues and returns in a library. 
 The system keeps records of book availability, cost, and the total number of books available.
 
-Database Name: library
+## Database Name: library
 
-Tables
-1. Branch
+## Tables
+**1.** Branch
  
 * Branch_no: INTEGER, PRIMARY KEY
 
@@ -18,7 +17,7 @@ Tables
 
 * Contact_no: VARCHAR(50)
 
-2. Employee
+**2.** Employee
  
 * Emp_Id: INTEGER, PRIMARY KEY
 
@@ -30,7 +29,7 @@ Tables
 
 * Branch_no: INTEGER, FOREIGN KEY (REFERENCES Branch(Branch_no))
 
-3. Books
+**3.** Books
  
 * ISBN: VARCHAR(13), PRIMARY KEY
 
@@ -46,7 +45,7 @@ Tables
 
 * Publisher: VARCHAR(50)
 
-4. Customer
+**4.** Customer
  
 * Customer_Id: INTEGER, PRIMARY KEY
 
@@ -56,7 +55,7 @@ Tables
 
 * Reg_date: DATE
 
-5. IssueStatus
+**5.** IssueStatus
    
 * Issue_Id: INTEGER, PRIMARY KEY
 
@@ -68,7 +67,7 @@ Tables
 
 * Isbn_book: VARCHAR(50), FOREIGN KEY (REFERENCES Books(ISBN))
 
-6. ReturnStatus
+**6.** ReturnStatus
 
 * Return_Id: INTEGER, PRIMARY KEY
 
@@ -80,9 +79,7 @@ Tables
 
 * Isbn_book2: VARCHAR(25), FOREIGN KEY (REFERENCES Books(ISBN))
 
-Queries:
-
-
+## Queries
 -- 1. Retrieve the book title, category, and rental price of all available books. 
 
       Select Book_Title, Category, Rental_Price from Books;
